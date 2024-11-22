@@ -30,6 +30,16 @@ int main() {
     if (!yukiTexture.loadFromFile("imgs/start/start-yuki.png")) {
         return -1;
     }
+    //글자 로드
+    sf::Texture textTexture;
+    if (!textTexture.loadFromFile("imgs/start/startText.png")) {
+        return -1;
+    }
+
+    sf::Texture text2Textrue;
+    if (!text2Textrue.loadFromFile("imgs/start/startText2.png")) {
+        return -1;
+    }
 
     // 스프라이트 생성
     sf::Sprite backgroundSprite(backgroundTexture);   // 배경 
@@ -37,6 +47,8 @@ int main() {
     sf::Sprite hwangwoongSprite(hwangwoongTexture);   // Hwangwoong 
     sf::Sprite kangminSprite(kangminTexture); //kangmin
     sf::Sprite yukiSprite(yukiTexture); // yuki
+    sf::Sprite textSprite(textTexture); // 글자
+    sf::Sprite textSprite2(text2Textrue);   //start 글자
 
     // 모든 스프라이트의 아래쪽을 화면 하단에 맞추기
     float baseY = 1080; // 화면 하단 Y 좌표
@@ -56,7 +68,13 @@ int main() {
     float yukiY = baseY - yukiTexture.getSize().y;
     yukiSprite.setPosition(yukiX, yukiY);
 
+    float textX = (1920 - textTexture.getSize().x) / 2.3f; // 화면 너비의 중앙
+    float textY = (1080 - textTexture.getSize().y) / 2.0f - 150; // 화면 높이의 중앙에서 50px 위로 이동
+    textSprite.setPosition(textX, textY);
 
+    float text2X = (1920-text2Textrue.getSize().x)/2.0f; // textSprite와 동일한 X 좌표
+    float text2Y = textY + textTexture.getSize().y + 200; // textSprite 아래로 20px 간격
+    textSprite2.setPosition(text2X, text2Y);
 
 
 
@@ -76,6 +94,8 @@ int main() {
         window.draw(hwangwoongSprite);
         window.draw(kangminSprite);
         window.draw(yukiSprite);
+        window.draw(textSprite);
+        window.draw(textSprite2);
 
         // 화면 출력
         window.display();
