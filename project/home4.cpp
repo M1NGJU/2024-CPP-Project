@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "home3");
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "home4");
 
     sf::Texture backgroundTexture;
     if (!backgroundTexture.loadFromFile("imgs/home1/home.png")) {
