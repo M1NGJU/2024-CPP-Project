@@ -9,8 +9,24 @@ int main() {
         return -1; // 이미지 로드 실패 시 종료
     }
 
+    sf::Texture textTexture;
+    if (!textTexture.loadFromFile("imgs/start-page1/text1.png")) {
+        return -1;
+    }
+
+    sf::Texture text2Texture;
+    if (!text2Texture.loadFromFile("imgs/start-page1/text2.png")) {
+        return -1;
+    }
+
+
 
     sf::Sprite backgroundSprite(backgroundTexture);
+    sf::Sprite textSprite(textTexture);
+    sf::Sprite text2Sprite(text2Texture);
+
+    textSprite.setPosition(480.f, 500.f);
+    text2Sprite.setPosition(640.f, 650.f);
 
     // 메인 루프
     while (window.isOpen()) {
@@ -25,6 +41,8 @@ int main() {
         window.clear(sf::Color::Black);
 
         window.draw(backgroundSprite);
+        window.draw(textSprite);
+        window.draw(text2Sprite);
 
         // 화면 출력
         window.display();
