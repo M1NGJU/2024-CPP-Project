@@ -52,7 +52,7 @@ int main() {
 
     // 모든 스프라이트의 아래쪽을 화면 하단에 맞추기
     float baseY = 1080; // 화면 하단 Y 좌표
-    float junX = 1920 - junTexture.getSize().x; 
+    float junX = 1920 - junTexture.getSize().x;
     float junY = baseY - junTexture.getSize().y; // 화면 하단에서 Jun 이미지 높이만큼 위로
     junSprite.setPosition(junX, junY);
 
@@ -60,7 +60,7 @@ int main() {
     float hwangwoongY = baseY - hwangwoongTexture.getSize().y; // 화면 하단에서 Hwangwoong 높이만큼 위로
     hwangwoongSprite.setPosition(hwangwoongX, hwangwoongY);
 
-    float kangminX = hwangwoongX + hwangwoongTexture.getSize().x-100; // Hwangwoong 오른쪽 끝에서 50px 간격
+    float kangminX = hwangwoongX + hwangwoongTexture.getSize().x - 100; // Hwangwoong 오른쪽 끝에서 50px 간격
     float kangminY = baseY - kangminTexture.getSize().y; // 화면 하단에서 Kangmin 높이만큼 위로
     kangminSprite.setPosition(kangminX, kangminY);
 
@@ -72,7 +72,7 @@ int main() {
     float textY = (1080 - textTexture.getSize().y) / 2.0f - 150; // 화면 높이의 중앙에서 50px 위로 이동
     textSprite.setPosition(textX, textY);
 
-    float text2X = (1920-text2Textrue.getSize().x)/2.0f; // textSprite와 동일한 X 좌표
+    float text2X = (1920 - text2Textrue.getSize().x) / 2.0f; // textSprite와 동일한 X 좌표
     float text2Y = textY + textTexture.getSize().y + 200; // textSprite 아래로 20px 간격
     textSprite2.setPosition(text2X, text2Y);
 
