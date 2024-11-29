@@ -1,19 +1,18 @@
-#ifndef START_PAGE4_H
-#define START_PAGE4_H
+#ifndef HOME1_H
+#define HOME1_H
 
 #include <SFML/Graphics.hpp>
 
-class StartPage4 {
+class Home1 {
 public:
     static int run(sf::RenderWindow& parentWindow) {
-        // 기존 창 사용
         sf::RenderWindow& window = parentWindow;
-        window.setTitle("page4");
+        window.setTitle("home");
 
         // 배경 텍스처 로드
         sf::Texture backgroundTexture;
-        if (!backgroundTexture.loadFromFile("imgs/start-page1/medicine.png")) {
-            return -1; // 텍스처 로드 실패 시 종료
+        if (!backgroundTexture.loadFromFile("imgs/home1/home.png")) {
+            return -1;
         }
 
         sf::Texture RectangleTexture;
@@ -42,21 +41,17 @@ public:
 
         sf::Text text2;
         text2.setFont(font);
-        text2.setString(L"와 드드 진짜 연애도 못 하고 죽네....... 인생........");
+        text2.setString(L"아니 ?? 여기 어디야?? 아니 나 죽었는데 왜.... 어디노");
         text2.setCharacterSize(40);
         text2.setFillColor(sf::Color::Black);
         text2.setPosition(390.f, 900.f);
 
-        // 배경 스프라이트에 텍스처 설정
         sf::Sprite backgroundSprite(backgroundTexture);
         sf::Sprite RectangleSprite(RectangleTexture);
         sf::Sprite PolygonSprite(PolygonTexture);
 
-        // 사각형 크기 조정 (절반 크기로 설정)
         RectangleSprite.setScale(0.9f, 0.7f); // 90% 가로, 70% 세로로 축소
         RectangleSprite.setPosition(310.f, 850.f);
-
-        // 폴리곤을 지정한 위치 (1637, 927)로 이동
         PolygonSprite.setPosition(1530.f, 927.f);
 
         // 메인 루프
@@ -66,29 +61,12 @@ public:
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
                     window.close();
-
-                // 마우스 클릭 이벤트 처리
-                if (event.type == sf::Event::MouseButtonPressed) {
-                    if (event.mouseButton.button == sf::Mouse::Left) {
-                        // 마우스 클릭 좌표 얻기
-                        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-
-                        // 폴리곤 스프라이트의 글로벌 바운드 얻기
-                        sf::FloatRect polygonBounds = PolygonSprite.getGlobalBounds();
-
-                        // 마우스 클릭이 폴리곤 영역 안에 있는지 확인
-                        if (polygonBounds.contains(mousePos.x, mousePos.y)) {
-                            // 클릭 시 home1 화면으로 이동
-                            return 5; // home1로 이동
-                        }
-                    }
-                }
             }
 
             // 화면 초기화
             window.clear(sf::Color::White);
 
-            // 배경 그리기
+            // 배경 이미지 그리기
             window.draw(backgroundSprite);
             window.draw(RectangleSprite);
             window.draw(PolygonSprite);
@@ -100,8 +78,8 @@ public:
             window.display();
         }
 
-        return 1; // 기본 반환값
+        return 1;
     }
 };
 
-#endif // START_PAGE4_H
+#endif // HOME1_H
