@@ -1,6 +1,7 @@
 #ifndef START_PAGE4_H
 #define START_PAGE4_H
 #include <SFML/Graphics.hpp>
+
 class StartPage4 {
 public:
     static int run(sf::RenderWindow& parentWindow) {
@@ -67,7 +68,11 @@ public:
                 // 마우스 클릭 처리
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        return 5; // 다음 페이지 번호 또는 종료 코드 반환
+                        // 클릭된 위치가 PolygonSprite 안에 있는지 확인
+                        sf::FloatRect polygonBounds = PolygonSprite.getGlobalBounds();
+                        if (polygonBounds.contains(event.mouseButton.x, event.mouseButton.y)) {
+                            return 5; // 다음 페이지로 넘어감
+                        }
                     }
                 }
             }
@@ -89,4 +94,5 @@ public:
         return 1; // 기본 반환값 (예: 이전 페이지)
     }
 };
+
 #endif // START_PAGE4_H
