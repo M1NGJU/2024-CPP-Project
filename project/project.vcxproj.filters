@@ -15,11 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="home1.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
@@ -38,5 +33,13 @@
     <ClInclude Include="home6.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="home7.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -19,15 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="home1.h" />
     <ClInclude Include="home2.h" />
     <ClInclude Include="home3.h" />
     <ClInclude Include="home4.h" />
     <ClInclude Include="home5.h" />
     <ClInclude Include="home6.h" />
+    <ClInclude Include="home7.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
