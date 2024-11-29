@@ -1,54 +1,70 @@
+#include <iostream>
 #include <SFML/Graphics.hpp>
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "page1");
 
+    // ë°°ê²½ í…ìŠ¤ì²˜ ë¡œë“œ
     sf::Texture backgroundTexture;
     if (!backgroundTexture.loadFromFile("imgs/start-page1/background.png")) {
-        return -1; // ÀÌ¹ÌÁö ·Îµå ½ÇÆĞ ½Ã Á¾·á
+        return -1; // ì´ë¯¸ì§€ ë¡œë“œ ì‹¤íŒ¨ ì‹œ ì¢…ë£Œ
     }
 
+    // ì‚¬ê°í˜• í…ìŠ¤ì²˜ ë¡œë“œ
     sf::Texture RectangleTexture;
     if (!RectangleTexture.loadFromFile("imgs/start-page1/Rectangle.png")) {
-        return -1; // ÀÌ¹ÌÁö ·Îµå ½ÇÆĞ ½Ã Á¾·á
+        return -1; // ì´ë¯¸ì§€ ë¡œë“œ ì‹¤íŒ¨ ì‹œ ì¢…ë£Œ
     }
 
+    // í´ë¦¬ê³¤ í…ìŠ¤ì²˜ ë¡œë“œ
     sf::Texture PolygonTexture;
     if (!PolygonTexture.loadFromFile("imgs/start-page1/Polygon.png")) {
-        return -1; // ÀÌ¹ÌÁö ·Îµå ½ÇÆĞ ½Ã Á¾·á
+        return -1; // ì´ë¯¸ì§€ ë¡œë“œ ì‹¤íŒ¨ ì‹œ ì¢…ë£Œ
     }
 
     sf::Sprite backgroundSprite(backgroundTexture);
     sf::Sprite RectangleSprite(RectangleTexture);
     sf::Sprite PolygonSprite(PolygonTexture);
 
-    // »ç°¢Çü Å©±â Á¶Á¤ (Àı¹İ Å©±â·Î ¼³Á¤)
-    RectangleSprite.setScale(0.9f, 0.7f); // 90% °¡·Î, 70% ¼¼·Î·Î Ãà¼Ò
+    // ì‚¬ê°í˜• í¬ê¸° ì¡°ì • (90% ê°€ë¡œ, 70% ì„¸ë¡œë¡œ ì¶•ì†Œ)
+    RectangleSprite.setScale(0.9f, 0.7f);
+    RectangleSprite.setPosition(310.f, 850.f); // í™”ë©´ ì•„ë˜ë¡œ ì´ë™
 
-    // Áß¾Ó¿¡¼­ »ìÂ¦ ¾Æ·¡·Î ÀÌµ¿
-    RectangleSprite.setPosition(310.f, 850.f);
-
-    // Æú¸®°ïÀ» ÁöÁ¤ÇÑ À§Ä¡ (1637, 927)·Î ÀÌµ¿
+    // í´ë¦¬ê³¤ ìœ„ì¹˜ ì§€ì •
     PolygonSprite.setPosition(1530.f, 927.f);
+
+    // í°íŠ¸ ë¡œë“œ
+    sf::Font font;
+    if (!font.loadFromFile("font/gulim.ttc")) {
+        return -1;
+    }
+
+    // í…ìŠ¤íŠ¸ ìƒì„±
+    sf::Text text("ì •ë¯¼ë ˆì´ë””", font, 100);
+    text.setFillColor(sf::Color::Black); // í…ìŠ¤íŠ¸ ìƒ‰ìƒ
+    text.setStyle(sf::Text::Bold); // í…ìŠ¤íŠ¸ ìŠ¤íƒ€ì¼ (êµµê²Œ)
+    text.setPosition(1920 / 2.f - text.getGlobalBounds().width / 2.f, 200.f); // í™”ë©´ ì¤‘ì•™ ìƒë‹¨ ìœ„ì¹˜
 
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
-            // Ã¢ ´İ±â ÀÌº¥Æ® Ã³¸®
             if (event.type == sf::Event::Closed) {
                 window.close();
             }
         }
 
-        // È­¸é ÃÊ±âÈ­
+        // í™”ë©´ ì´ˆê¸°í™”
         window.clear(sf::Color::White);
 
-        // ¹è°æ ±×¸®±â
+        // ë°°ê²½ ë° ìŠ¤í”„ë¼ì´íŠ¸ ê·¸ë¦¬ê¸°
         window.draw(backgroundSprite);
         window.draw(RectangleSprite);
         window.draw(PolygonSprite);
 
-        // È­¸é Ãâ·Â
+        // í…ìŠ¤íŠ¸ ê·¸ë¦¬ê¸°
+        window.draw(text);
+
+        // í™”ë©´ ì¶œë ¥
         window.display();
     }
 
