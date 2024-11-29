@@ -6,6 +6,7 @@
 #include "startPage4.h" // 추가
 #include "home1.h" // 추가
 #include "home2.h" // 추가
+#include "home3.h" // 추가
 
 int main() {
     // 단일 창 생성
@@ -37,8 +38,14 @@ int main() {
             pageState = 6; // home1 화면이 끝나면 home2 화면으로 이동
             break;
         case 6: // home2 페이지
-            Home2::show(window); // home2 화면 표시
-            pageState = 0; // home2 화면이 끝나면 시작 페이지로 돌아가기
+            pageState = Home2::show(window); // Home2::show 호출
+            if (pageState == 7) {
+                pageState = 8; // home2에서 클릭 후 home3으로 전환
+            }
+            break;
+        case 8: // home3 페이지
+            pageState = Home3::show(window); // Home3 실행
+            pageState = 0; // home3 화면이 끝나면 시작 페이지로 돌아가기
             break;
         default:
             window.close();

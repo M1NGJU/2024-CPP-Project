@@ -1,11 +1,11 @@
-#ifndef HOME2_H
-#define HOME2_H
+#ifndef HOME3_H
+#define HOME3_H
 
 #include <SFML/Graphics.hpp>
 
-class Home2 {
+class Home3 {
 public:
-    // home2 화면을 표시하는 함수
+    // home3 화면을 표시하는 함수
     static int show(sf::RenderWindow& window) {
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/home1/home.png")) {
@@ -31,14 +31,14 @@ public:
         // 텍스트 생성
         sf::Text text1;
         text1.setFont(font);
-        text1.setString(L"엄마");
+        text1.setString(L"정민 레이디");
         text1.setCharacterSize(33); // 글자 크기
         text1.setFillColor(sf::Color::Black); // 글자 색상
         text1.setPosition(330.f, 860.f); // 텍스트 위치
 
         sf::Text text2;
         text2.setFont(font);
-        text2.setString(L"니 안 일어나냐???? 지각이야 이놈아!!!!!!!!! 정신차려!!!!!!!!!!!");
+        text2.setString(L"?? 누구세요...????? 아니 저 안 죽었어요?");
         text2.setCharacterSize(40);
         text2.setFillColor(sf::Color::Black);
         text2.setPosition(390.f, 900.f);
@@ -59,14 +59,13 @@ public:
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed) {
                     window.close();
-                    return -1;
+                    return -1; // 종료 코드 반환
                 }
 
                 // 마우스 클릭 처리
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        // 클릭 시 home3 화면으로 이동
-                        return 7; // home3 화면으로 이동
+                        return 0; // 다음 페이지 번호 또는 종료 코드 반환
                     }
                 }
             }
@@ -79,7 +78,6 @@ public:
             window.draw(RectangleSprite);
             window.draw(PolygonSprite);
 
-            // 텍스트 그리기
             window.draw(text1);
             window.draw(text2);
 
@@ -87,8 +85,8 @@ public:
             window.display();
         }
 
-        return 0; // 종료 시 기본값 반환
+        return -1; // 종료 코드 반환
     }
 };
 
-#endif // HOME2_H
+#endif // HOME3_H
