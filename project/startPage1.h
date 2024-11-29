@@ -38,10 +38,7 @@ public:
         // 폴리곤을 지정한 위치 (1637, 927)로 이동
         PolygonSprite.setPosition(1530.f, 927.f);
 
-        // 페이지 상태를 추적할 변수
-        bool changePage = false;
-
-        while (window.isOpen() && !changePage) {
+        while (window.isOpen()) {
             sf::Event event;
             while (window.pollEvent(event)) {
                 // 창 닫기 이벤트 처리
@@ -49,11 +46,20 @@ public:
                     window.close();
                 }
 
-                // 마우스 클릭 이벤트 추가 (선택적)
+                // 마우스 클릭 이벤트 처리
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        // 필요하다면 페이지 전환 로직 추가
-                        changePage = true;
+                        // 마우스 클릭 좌표 얻기
+                        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+
+                        // 폴리곤 스프라이트의 글로벌 바운드 얻기
+                        sf::FloatRect polygonBounds = PolygonSprite.getGlobalBounds();
+
+                        // 마우스 클릭이 폴리곤 영역 안에 있는지 확인
+                        if (polygonBounds.contains(mousePos.x, mousePos.y)) {
+                            // 다음 페이지로 전환
+                            return 2; // startPage2로 이동
+                        }
                     }
                 }
             }
@@ -70,7 +76,7 @@ public:
             window.display();
         }
 
-        return changePage ? 1 : 0;
+        return 1;
     }
 };
 

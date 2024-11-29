@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "start.h"
 #include "startPage1.h"
+#include "startPage2.h" 
 
 int main() {
     // 단일 창 생성
@@ -17,6 +18,9 @@ int main() {
             break;
         case 1: // 첫 번째 페이지
             pageState = StartPage1::run(window);
+            break;
+        case 2: // 두 번째 페이지
+            pageState = StartPage2::run(window);
             break;
         default:
             window.close();
