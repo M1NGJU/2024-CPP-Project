@@ -1,12 +1,11 @@
-#ifndef HOME1_H
-#define HOME1_H
+#ifndef HOME2_H
+#define HOME2_H
 
 #include <SFML/Graphics.hpp>
-#include "home2.h"  // home2.h 추가
 
-class Home1 {
+class Home2 {
 public:
-    // home1 화면을 표시하는 함수
+    // home2 화면을 표시하는 함수
     static void show(sf::RenderWindow& window) {
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/home1/home.png")) {
@@ -32,17 +31,24 @@ public:
         // 텍스트 생성
         sf::Text text1;
         text1.setFont(font);
-        text1.setString(L"정민 레이디");
+        text1.setString(L"엄마");
         text1.setCharacterSize(33); // 글자 크기
         text1.setFillColor(sf::Color::Black); // 글자 색상
         text1.setPosition(330.f, 860.f); // 텍스트 위치
 
         sf::Text text2;
         text2.setFont(font);
-        text2.setString(L"아니 ?? 여기 어디야?? 아니 나 죽었는데 왜.... 어디노");
+        text2.setString(L"니 안 일어나냐???? 지각이야 이놈아!!!!!!!!! 정신차려!!!!!!!!!!!");
         text2.setCharacterSize(40);
         text2.setFillColor(sf::Color::Black);
         text2.setPosition(390.f, 900.f);
+
+        sf::Text text;
+        text.setFont(font);
+        text.setString(L"Home2 화면");
+        text.setCharacterSize(40); // 글자 크기
+        text.setFillColor(sf::Color::Red); // 텍스트 색상 변경 (예: 빨간색)
+        text.setPosition(600.f, 500.f); // 텍스트 위치
 
         sf::Sprite backgroundSprite(backgroundTexture);
         sf::Sprite RectangleSprite(RectangleTexture);
@@ -60,21 +66,6 @@ public:
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
                     window.close();
-
-                // 마우스 클릭 이벤트 처리
-                if (event.type == sf::Event::MouseButtonPressed) {
-                    if (event.mouseButton.button == sf::Mouse::Left) {
-                        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-                        sf::FloatRect polygonBounds = PolygonSprite.getGlobalBounds();
-
-                        // 폴리곤 영역 안에서 클릭이 일어난 경우
-                        if (polygonBounds.contains(mousePos.x, mousePos.y)) {
-                            // home2 화면으로 넘어가기
-                            Home2::show(window); // Home2로 이동
-                            return; // Home1을 종료하고 Home2로 이동
-                        }
-                    }
-                }
             }
 
             // 화면 초기화
@@ -85,7 +76,7 @@ public:
             window.draw(RectangleSprite);
             window.draw(PolygonSprite);
 
-            // 텍스트 그리기
+            //텍스트
             window.draw(text1);
             window.draw(text2);
 
@@ -97,4 +88,4 @@ public:
     }
 };
 
-#endif // HOME1_H
+#endif // HOME2_H
