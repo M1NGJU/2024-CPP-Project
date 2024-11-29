@@ -26,6 +26,7 @@
     <ClInclude Include="home2.h" />
     <ClInclude Include="home3.h" />
     <ClInclude Include="home4.h" />
+    <ClInclude Include="home5.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

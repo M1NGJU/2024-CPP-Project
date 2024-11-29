@@ -8,6 +8,7 @@
 #include "home2.h" 
 #include "home3.h"
 #include "home4.h"
+#include "home5.h"
 
 int main() {
     // 단일 창 생성
@@ -45,6 +46,9 @@ int main() {
             break;
         case 8:
             pageState = Home4::run(window);
+            break;
+        case 9:
+            pageState = Home5::run(window);
             break;
         default:
             window.close();

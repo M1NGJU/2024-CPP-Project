@@ -60,24 +60,34 @@ public:
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
                     window.close();
+
+                // 클릭 이벤트 처리
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        // 클릭된 위치가 PolygonSprite의 범위 내인지 확인
+                        if (PolygonSprite.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
+                            return 9; // Home5로 이동 (9은 Home5의 페이지 상태)
+                        }
+                    }
+                }
             }
 
             // 화면 초기화
             window.clear(sf::Color::White);
 
-            // 배경 이미지 그리기
+            // 배경 이미지 및 텍스트 출력
             window.draw(backgroundSprite);
             window.draw(RectangleSprite);
             window.draw(PolygonSprite);
 
-            window.draw(text1); // 텍스트 그리기
+            window.draw(text1);
             window.draw(text2);
 
             // 화면 출력
             window.display();
         }
 
-        return 0;
+        return 0; // 기본 상태로 돌아감
     }
 };
 
