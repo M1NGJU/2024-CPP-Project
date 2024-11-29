@@ -58,8 +58,25 @@ public:
         while (window.isOpen()) {
             sf::Event event;
             while (window.pollEvent(event)) {
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        // 마우스 클릭 좌표 얻기
+                        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+
+                        // 폴리곤 스프라이트의 글로벌 바운드 얻기
+                        sf::FloatRect polygonBounds = PolygonSprite.getGlobalBounds();
+
+                        // 마우스 클릭이 폴리곤 영역 안에 있는지 확인
+                        if (polygonBounds.contains(mousePos.x, mousePos.y)) {
+                            // 클릭 시 home2 화면으로 이동
+                            return 7; // home2로 이동
+                        }
+                    }
+                }
+                // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
                     window.close();
+
             }
 
             // 화면 초기화
