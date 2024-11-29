@@ -1,15 +1,15 @@
-#ifndef HOME1_H
-#define HOME1_H
+#ifndef HOME2_H
+#define HOME2_H
 
 #include <SFML/Graphics.hpp>
 
-class Home1 {
+class Home2 {
 public:
     static int run(sf::RenderWindow& parentWindow) {
         sf::RenderWindow& window = parentWindow;
-        window.setTitle("home");
+        window.setTitle("Home2");
 
-        // 배경 텍스처 로드
+        // 배경 이미지 로드
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/home1/home.png")) {
             return -1;
@@ -34,14 +34,14 @@ public:
         // 텍스트 생성
         sf::Text text1;
         text1.setFont(font);
-        text1.setString(L"정민 레이디");
+        text1.setString(L"엄마");
         text1.setCharacterSize(33); // 글자 크기
         text1.setFillColor(sf::Color::Black); // 글자 색상
         text1.setPosition(330.f, 860.f); // 텍스트 위치
 
         sf::Text text2;
         text2.setFont(font);
-        text2.setString(L"아니 ?? 여기 어디야?? 아니 나 죽었는데 왜.... 어디노");
+        text2.setString(L"니 안 일어나냐???? 지각이야 이놈아!!!!!!!!! 정신차려!!!!!!!!!!!");
         text2.setCharacterSize(40);
         text2.setFillColor(sf::Color::Black);
         text2.setPosition(390.f, 900.f);
@@ -58,24 +58,6 @@ public:
         while (window.isOpen()) {
             sf::Event event;
             while (window.pollEvent(event)) {
-                // 마우스 클릭 이벤트 처리
-                if (event.type == sf::Event::MouseButtonPressed) {
-                    if (event.mouseButton.button == sf::Mouse::Left) {
-                        // 마우스 클릭 좌표 얻기
-                        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-
-                        // 폴리곤 스프라이트의 글로벌 바운드 얻기
-                        sf::FloatRect polygonBounds = PolygonSprite.getGlobalBounds();
-
-                        // 마우스 클릭이 폴리곤 영역 안에 있는지 확인
-                        if (polygonBounds.contains(mousePos.x, mousePos.y)) {
-                            // 클릭 시 home2 화면으로 이동
-                            return 6; // home2로 이동
-                        }
-                    }
-                }
-
-                // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
                     window.close();
             }
@@ -83,7 +65,7 @@ public:
             // 화면 초기화
             window.clear(sf::Color::White);
 
-            // 배경 이미지 그리기
+            // 배경 그리기
             window.draw(backgroundSprite);
             window.draw(RectangleSprite);
             window.draw(PolygonSprite);
@@ -99,4 +81,4 @@ public:
     }
 };
 
-#endif // HOME1_H
+#endif // HOME2_H

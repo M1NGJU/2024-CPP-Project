@@ -5,6 +5,7 @@
 #include "startPage3.h"
 #include "startPage4.h" // 추가
 #include "home1.h" // home1.h 헤더 추가
+#include "home2.h" // 수정된 부분
 
 int main() {
     // 단일 창 생성
@@ -33,6 +34,9 @@ int main() {
             break;
         case 5: // home1 화면
             pageState = Home1::run(window); // home1 화면 실행
+            break;
+        case 6: // home2 화면
+            pageState = Home2::run(window); 
             break;
         default:
             window.close();

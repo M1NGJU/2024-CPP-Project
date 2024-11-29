@@ -26,5 +26,8 @@
     <ClInclude Include="home1.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="home2.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
