@@ -7,6 +7,7 @@
 #include "home1.h" // home1.h 헤더 추가
 #include "home2.h" 
 #include "home3.h"
+#include "home4.h"
 
 int main() {
     // 단일 창 생성
@@ -41,6 +42,9 @@ int main() {
             break;
         case 7:
             pageState = Home3::run(window);
+            break;
+        case 8:
+            pageState = Home4::run(window);
             break;
         default:
             window.close();

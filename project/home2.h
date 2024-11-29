@@ -68,8 +68,7 @@ public:
 
                         // 마우스 클릭이 폴리곤 영역 안에 있는지 확인
                         if (polygonBounds.contains(mousePos.x, mousePos.y)) {
-                            // 클릭 시 home2 화면으로 이동
-                            return 7; // home2로 이동
+                            return 7; 
                         }
                     }
                 }
