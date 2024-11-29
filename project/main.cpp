@@ -4,6 +4,7 @@
 #include "startPage2.h"
 #include "startPage3.h"
 #include "startPage4.h" // 추가
+#include "home1.h" // 추가
 
 int main() {
     // 단일 창 생성
@@ -28,7 +29,11 @@ int main() {
             pageState = StartPage3::run(window);
             break;
         case 4: // 네 번째 페이지
-            pageState = StartPage4::run(window); // 추가된 페이지 실행
+            pageState = StartPage4::run(window); // StartPage4 실행
+            break;
+        case 5: // home1 페이지
+            Home1::show(window); // home1 화면 표시
+            pageState = 0; // home1 화면이 끝나면 시작 페이지로 돌아가기
             break;
         default:
             window.close();

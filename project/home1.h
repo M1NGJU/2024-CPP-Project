@@ -1,42 +1,32 @@
-#ifndef START_PAGE4_H
-#define START_PAGE4_H
-#include <SFML/Graphics.hpp>
-class StartPage4 {
-public:
-    static int run(sf::RenderWindow& parentWindow) {
-        sf::RenderWindow& window = parentWindow;
-        window.setTitle("page4");
+#ifndef HOME1_H
+#define HOME1_H
 
+#include <SFML/Graphics.hpp>
+
+class Home1 {
+public:
+    // home1 화면을 표시하는 함수
+    static void show(sf::RenderWindow& window) {
         // 배경 텍스처 로드
         sf::Texture backgroundTexture;
-        if (!backgroundTexture.loadFromFile("imgs/start-page1/medicine.png")) {
-            return -1; // 텍스처 로드 실패 시 종료
+        if (!backgroundTexture.loadFromFile("imgs/home1/home.png")) {
+            return;
         }
+
         sf::Texture RectangleTexture;
         if (!RectangleTexture.loadFromFile("imgs/start-page1/Rectangle.png")) {
-            return -1; // 텍스처 로드 실패 시 종료
+            return; // 이미지 로드 실패 시 종료
         }
+
         sf::Texture PolygonTexture;
         if (!PolygonTexture.loadFromFile("imgs/start-page1/Polygon.png")) {
-            return -1; // 텍스처 로드 실패 시 종료
+            return; // 이미지 로드 실패 시 종료
         }
-
-        // 배경 스프라이트에 텍스처 설정
-        sf::Sprite backgroundSprite(backgroundTexture);
-        sf::Sprite RectangleSprite(RectangleTexture);
-        sf::Sprite PolygonSprite(PolygonTexture);
-
-        // 사각형 크기 조정
-        RectangleSprite.setScale(0.9f, 0.7f); // 90% 가로, 70% 세로로 축소
-        RectangleSprite.setPosition(310.f, 850.f);
-
-        // 폴리곤 위치 설정
-        PolygonSprite.setPosition(1530.f, 927.f);
 
         // 글꼴 로드
         sf::Font font;
         if (!font.loadFromFile("font/Jua-Regular.ttf")) { // 사용할 글꼴 경로
-            return -1; // 글꼴 로드 실패 시 종료
+            return;
         }
 
         // 텍스트 생성
@@ -49,10 +39,21 @@ public:
 
         sf::Text text2;
         text2.setFont(font);
-        text2.setString(L"와 드드 진짜 연애도 못 하고 죽네....... 인생........");
+        text2.setString(L"아니 ?? 여기 어디야?? 아니 나 죽었는데 왜.... 어디노");
         text2.setCharacterSize(40);
         text2.setFillColor(sf::Color::Black);
         text2.setPosition(390.f, 900.f);
+
+        // 배경 스프라이트에 텍스처 설정
+        sf::Sprite backgroundSprite(backgroundTexture);
+        sf::Sprite RectangleSprite(RectangleTexture);
+        sf::Sprite PolygonSprite(PolygonTexture);
+
+        // 사각형 크기 조정
+        RectangleSprite.setScale(0.9f, 0.7f); // 90% 가로, 70% 세로로 축소
+        RectangleSprite.setPosition(310.f, 850.f); // 사각형 위치
+
+        PolygonSprite.setPosition(1530.f, 927.f); // 폴리곤 위치 설정
 
         // 메인 루프
         while (window.isOpen()) {
@@ -61,32 +62,27 @@ public:
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed) {
                     window.close();
-                    return -1;
-                }
-
-                // 마우스 클릭 처리
-                if (event.type == sf::Event::MouseButtonPressed) {
-                    if (event.mouseButton.button == sf::Mouse::Left) {
-                        return 5; // 다음 페이지 번호 또는 종료 코드 반환
-                    }
                 }
             }
 
             // 화면 초기화
             window.clear(sf::Color::White);
 
-            // 배경 그리기
+            // 배경 이미지 그리기
             window.draw(backgroundSprite);
             window.draw(RectangleSprite);
             window.draw(PolygonSprite);
-            window.draw(text1); // 텍스트 그리기
+
+            // 텍스트 그리기
+            window.draw(text1);
             window.draw(text2);
 
             // 화면 출력
             window.display();
         }
 
-        return 1; // 기본 반환값 (예: 이전 페이지)
+        return;
     }
 };
-#endif // START_PAGE4_H
+
+#endif // HOME1_H

@@ -19,12 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="home2.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="startPage1.h" />
-    <ClInclude Include="startPage2.h" />
-    <ClInclude Include="startPage3.h" />
+    <ClInclude Include="home1.h" />
     <ClInclude Include="startPage4.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
