@@ -6,7 +6,7 @@
 class Home3 {
 public:
     // home3 화면을 표시하는 함수
-    static int show(sf::RenderWindow& window) {
+    static int run(sf::RenderWindow& window) {
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/home1/home.png")) {
             return -1; // 이미지 로드 실패 시 종료
@@ -65,7 +65,7 @@ public:
                 // 마우스 클릭 처리
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        return 0; // 다음 페이지 번호 또는 종료 코드 반환
+                        return 0; // 클릭 시 0을 반환하여 다음 페이지로 넘어가거나 종료
                     }
                 }
             }
@@ -78,6 +78,7 @@ public:
             window.draw(RectangleSprite);
             window.draw(PolygonSprite);
 
+            // 텍스트 그리기
             window.draw(text1);
             window.draw(text2);
 

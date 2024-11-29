@@ -7,26 +7,26 @@
 class Home1 {
 public:
     // home1 화면을 표시하는 함수
-    static void show(sf::RenderWindow& window) {
+    static int run(sf::RenderWindow& window) {
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/home1/home.png")) {
-            return;
+            return -1;
         }
 
         sf::Texture RectangleTexture;
         if (!RectangleTexture.loadFromFile("imgs/start-page1/Rectangle.png")) {
-            return; // 이미지 로드 실패 시 종료
+            return -1; // 이미지 로드 실패 시 종료
         }
 
         sf::Texture PolygonTexture;
         if (!PolygonTexture.loadFromFile("imgs/start-page1/Polygon.png")) {
-            return; // 이미지 로드 실패 시 종료
+            return -1; // 이미지 로드 실패 시 종료
         }
 
         // 글꼴 로드
         sf::Font font;
         if (!font.loadFromFile("font/Jua-Regular.ttf")) { // 글꼴 경로 확인
-            return; // 글꼴 로드 실패 시 종료
+            return -1; // 글꼴 로드 실패 시 종료
         }
 
         // 텍스트 생성
@@ -70,8 +70,7 @@ public:
                         // 폴리곤 영역 안에서 클릭이 일어난 경우
                         if (polygonBounds.contains(mousePos.x, mousePos.y)) {
                             // home2 화면으로 넘어가기
-                            Home2::show(window); // Home2로 이동
-                            return; // Home1을 종료하고 Home2로 이동
+                            return 6; // Home2로 이동
                         }
                     }
                 }
@@ -93,7 +92,7 @@ public:
             window.display();
         }
 
-        return;
+        return 0; // 기본 반환값 (예: 이전 페이지)
     }
 };
 

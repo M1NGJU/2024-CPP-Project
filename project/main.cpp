@@ -34,17 +34,17 @@ int main() {
             pageState = StartPage4::run(window); // StartPage4 실행
             break;
         case 5: // home1 페이지
-            Home1::show(window); // home1 화면 표시
+            Home1::run(window); // home1 화면 표시
             pageState = 6; // home1 화면이 끝나면 home2 화면으로 이동
             break;
         case 6: // home2 페이지
-            pageState = Home2::show(window); // Home2::show 호출
+            pageState = Home2::run(window); // Home2::show 호출
             if (pageState == 7) {
                 pageState = 8; // home2에서 클릭 후 home3으로 전환
             }
             break;
         case 8: // home3 페이지
-            pageState = Home3::show(window); // Home3 실행
+            pageState = Home3::run(window); // Home3 실행
             pageState = 0; // home3 화면이 끝나면 시작 페이지로 돌아가기
             break;
         default:
