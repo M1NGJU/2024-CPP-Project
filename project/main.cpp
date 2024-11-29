@@ -1,7 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include "start.h"
 #include "startPage1.h"
-#include "startPage2.h" 
+#include "startPage2.h"
+#include "startPage3.h"
+#include "startPage4.h" // 추가
 
 int main() {
     // 단일 창 생성
@@ -21,6 +23,12 @@ int main() {
             break;
         case 2: // 두 번째 페이지
             pageState = StartPage2::run(window);
+            break;
+        case 3: // 세 번째 페이지
+            pageState = StartPage3::run(window);
+            break;
+        case 4: // 네 번째 페이지
+            pageState = StartPage4::run(window); // 추가된 페이지 실행
             break;
         default:
             window.close();

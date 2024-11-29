@@ -24,6 +24,8 @@
   <ItemGroup>
     <ClInclude Include="startPage1.h" />
     <ClInclude Include="startPage2.h" />
+    <ClInclude Include="startPage3.h" />
+    <ClInclude Include="startPage4.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

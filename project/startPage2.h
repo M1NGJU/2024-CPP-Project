@@ -10,22 +10,20 @@ public:
         sf::RenderWindow& window = parentWindow;
         window.setTitle("page2");
 
-        // 배경 텍스처 로드
+        // 텍스처 로드
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/start-page1/background2.png")) {
             return -1; // 이미지 로드 실패 시 종료
         }
 
-        // 첫 번째 텍스트 텍스처 로드
         sf::Texture textTexture;
         if (!textTexture.loadFromFile("imgs/start-page1/text1.png")) {
-            return -1;
+            return -1; // 이미지 로드 실패 시 종료
         }
 
-        // 두 번째 텍스트 텍스처 로드
         sf::Texture text2Texture;
         if (!text2Texture.loadFromFile("imgs/start-page1/text2.png")) {
-            return -1;
+            return -1; // 이미지 로드 실패 시 종료
         }
 
         // 스프라이트 생성
@@ -34,8 +32,8 @@ public:
         sf::Sprite text2Sprite(text2Texture);
 
         // 텍스트 스프라이트 위치 설정
-        textSprite.setPosition(480.f, 500.f);
-        text2Sprite.setPosition(640.f, 650.f);
+        textSprite.setPosition(480.f, 500.f); // 첫 번째 텍스트 위치
+        text2Sprite.setPosition(640.f, 650.f); // 두 번째 텍스트 위치
 
         // 메인 루프
         while (window.isOpen()) {
@@ -47,28 +45,27 @@ public:
                     return -1;
                 }
 
-                // 화면 클릭 이벤트 처리
+                // 화면 클릭 시 다음 페이지로 이동
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        // 화면 클릭 시 바로 다음 페이지로 전환
-                        return 3; // 또는 원하는 다음 페이지 번호
+                        return 3; // startPage3로 이동
                     }
                 }
             }
 
-            // 화면 초기화 - 블랙으로 설정
+            // 화면 초기화 - 블랙 배경
             window.clear(sf::Color::Black);
 
             // 스프라이트 그리기
-            window.draw(backgroundSprite);
-            window.draw(textSprite);
-            window.draw(text2Sprite);
+            window.draw(backgroundSprite); // 배경
+            window.draw(textSprite);      // 첫 번째 텍스트
+            window.draw(text2Sprite);     // 두 번째 텍스트
 
             // 화면 출력
             window.display();
         }
 
-        return 1;
+        return 1; // 기본 상태 반환
     }
 };
 

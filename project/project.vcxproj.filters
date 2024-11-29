@@ -26,5 +26,11 @@
     <ClInclude Include="startPage1.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="startPage3.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="startPage4.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
