@@ -12,6 +12,7 @@
 #include "home5.h"
 #include "home6.h"
 #include "home7.h" // 추가
+#include "stage1.h"
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Start");
@@ -57,6 +58,9 @@ int main() {
             break;
         case 11: // pageState가 11인 경우 Home7 실행
             pageState = Home7::run(window);
+            break;
+        case 12:    // stage1
+            pageState = stage1::run(window);
             break;
         default:
             window.close();

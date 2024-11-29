@@ -34,6 +34,15 @@ public:
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
                     window.close();
+
+                // 마우스 클릭 이벤트 처리
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+                            std::cout << "Mouse clicked on PolygonSprite, transitioning to Home7" << std::endl; // 디버그 메시지
+                            return 12;
+                    }
+                }
             }
 
             // 화면 초기화
