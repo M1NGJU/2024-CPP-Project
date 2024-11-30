@@ -1,10 +1,8 @@
-#ifndef STAGE1_5_6_H
-#define STAGE1_5_6_H
-
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"  // Heart 클래스 포함
+#include "stage1-5-9.h"  // stage1-5-9 클래스 포함
 
 class stage1_5_6 {
 public:
@@ -90,9 +88,7 @@ public:
                 // 마우스 클릭 이벤트 처리
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-                        stage1_5_6::heart = heart;
-                        return 25;
+                        return stage1_5_9::run(window);  // stage1-5-9 실행
                     }
                 }
             }
@@ -117,5 +113,3 @@ public:
 
 // 호감도 초기값 설정
 Heart stage1_5_6::heart(50);
-
-#endif

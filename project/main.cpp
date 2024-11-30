@@ -1,4 +1,5 @@
-﻿#include <SFML/Graphics.hpp>
+﻿
+#include <SFML/Graphics.hpp>
 #include <iostream>
 #include "start.h"
 #include "startPage1.h"
