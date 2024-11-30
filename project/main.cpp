@@ -18,7 +18,8 @@
 #include "stage1-3.h"
 #include "stage1-3-1.h"
 #include "stage1-3-2.h"
-#include "stage1-4-1.h" // 추가
+#include "stage1-4-1.h"
+#include "stage1-4-2.h" // 추가
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Start");
@@ -84,7 +85,10 @@ int main() {
             pageState = stage1_3_2::run(window);
             break;
         case 18:
-            pageState = stage1_4_1::run(window); // 추가
+            pageState = stage1_4_1::run(window); // stage1-4-1 추가
+            break;
+        case 19:
+            pageState = stage1_4_2::run(window); // stage1-4-2 추가
             break;
         default:
             window.close();

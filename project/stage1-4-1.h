@@ -5,6 +5,7 @@
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"  // Heart 클래스 포함
+#include "stage1-4-2.h"  // stage1-4-2.h 포함
 
 class stage1_4_1 {
 public:
@@ -94,7 +95,7 @@ public:
 
                         // 다음 화면으로 넘어가는 클릭 영역 추가 (예: PolygonSprite)
                         if (PolygonSprite.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
-                            // 다음 화면으로 전환 (예: return 19)
+                            stage1_4_2::heart = heart; // 호감도 값을 stage1_4_2로 전달
                             return 19;
                         }
                     }
