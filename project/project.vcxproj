@@ -19,9 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Heart.h" />
     <ClInclude Include="home6.h" />
     <ClInclude Include="stage1-1.h" />
     <ClInclude Include="stage1-2.h" />
+    <ClInclude Include="stage1-3-1.h" />
     <ClInclude Include="stage1-3.h" />
   </ItemGroup>
   <ItemGroup>
