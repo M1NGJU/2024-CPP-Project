@@ -11,11 +11,12 @@
 #include "home4.h"
 #include "home5.h"
 #include "home6.h"
-#include "home7.h" // 추가
+#include "home7.h"
 #include "stage1.h"
 #include "stage1-1.h"
 #include "stage1-2.h"
 #include "stage1-3.h"
+#include "stage1-3-1.h" // 추가
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Start");
@@ -59,10 +60,10 @@ int main() {
         case 10:
             pageState = Home6::run(window);
             break;
-        case 11: // pageState가 11인 경우 Home7 실행
+        case 11:
             pageState = Home7::run(window);
             break;
-        case 12:    // stage1
+        case 12:
             pageState = stage1::run(window);
             break;
         case 13:
@@ -73,6 +74,10 @@ int main() {
             break;
         case 15:
             pageState = stage1_3::run(window);
+            break;
+        case 16:
+            pageState = stage1_3_1::run(window);
+            break;
         default:
             window.close();
             break;

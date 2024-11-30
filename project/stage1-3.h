@@ -5,6 +5,7 @@
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"  // Heart 클래스 포함
+#include "stage1-3-1.h"  // stage1-3-1.h 포함
 
 class stage1_3 {
 private:
@@ -104,15 +105,15 @@ public:
                         // 첫 번째 버튼 클릭 처리
                         if (RectangleSprite.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                             decreaseHeart(10);
+                            stage1_3_1::heart = heart; // 호감도 값을 stage1_3_1으로 전달
+                            return 16; // stage1-3-1 화면으로 전환
                         }
 
                         // 두 번째 버튼 클릭 처리
                         if (RectangleSprite2.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                             increaseHeart(10);
+                            text3.setString(L"환웅 호감도 : " + std::to_wstring(heart.getValue()));
                         }
-
-                        // 호감도 텍스트 업데이트
-                        text3.setString(L"환웅 호감도 : " + std::to_wstring(heart.getValue()));
                     }
                 }
             }

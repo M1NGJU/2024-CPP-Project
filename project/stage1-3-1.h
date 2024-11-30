@@ -1,15 +1,18 @@
-#ifndef STAGE1_3_H
-#define STAGE1_3_H
+#ifndef STAGE1_3_1_H
+#define STAGE1_3_1_H
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
+#include "Heart.h"  // Heart 클래스 포함
 
 class stage1_3_1 {
 public:
-	static int run(sf::RenderWindow& parentWindow) {
-		sf::RenderWindow& window = parentWindow;
-		window.setTitle(L"stage1(환웅)");
+    static Heart heart;  // Heart 클래스의 인스턴스 (외부에서 초기화)
+
+    static int run(sf::RenderWindow& parentWindow) {
+        sf::RenderWindow& window = parentWindow;
+        window.setTitle(L"stage1-3-1(환웅)");
 
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/stage1/background.png")) {
@@ -52,16 +55,20 @@ public:
         text2.setFillColor(sf::Color::Black);
         text2.setPosition(390.f, 900.f);
 
+        sf::Text text3;
+        text3.setFont(font);
+        text3.setString(L"환웅 호감도 : " + std::to_wstring(heart.getValue()));
+        text3.setCharacterSize(30);
+        text3.setFillColor(sf::Color::Black);
+        text3.setPosition(40.f, 30.f);
+
         sf::Sprite backgroundSprite(backgroundTexture);
         sf::Sprite hwanwoongSprite(hwanwoongTexture);
         sf::Sprite RectangleSprite(RectangleTexture);
         sf::Sprite PolygonSprite(PolygonTexture);
 
         RectangleSprite.setScale(0.9f, 0.7f); // 90% 가로, 70% 세로로 축소
-
-        // 중앙에서 살짝 아래로 이동
         RectangleSprite.setPosition(310.f, 850.f);
-
         PolygonSprite.setPosition(1530.f, 927.f);
 
         // 배경 이미지 크기 조정 (필요시)
@@ -84,7 +91,7 @@ public:
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
                         sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-                        return 15;
+                        return 16; // stage1-3-1 화면으로 전환
                     }
                 }
             }
@@ -97,17 +104,19 @@ public:
             window.draw(hwanwoongSprite);
             window.draw(RectangleSprite);
             window.draw(PolygonSprite);
-
             window.draw(text1);
             window.draw(text2);
+            window.draw(text3); // 호감도 텍스트 그리기
 
             // 화면 출력
             window.display();
         }
 
         return 0;
-
-	}
+    }
 };
 
-#endif
+// 호감도 초기값 설정 (외부에서 초기화)
+Heart stage1_3_1::heart(50);
+
+#endif // STAGE1_3_1_H
