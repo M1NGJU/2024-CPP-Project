@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include "Heart.h"  // Heart 클래스 포함
+#include "stage1-5-1.h"
 
 class stage1_3_2 {
 public:
@@ -67,7 +68,8 @@ public:
                 // 마우스 클릭 이벤트 처리
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        window.close(); // 클릭 시 프로그램 종료
+                        // 수정필요
+                        return 20;
                     }
                 }
             }

@@ -33,6 +33,9 @@
     <ClInclude Include="stage1-4-2.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="stage1-5-1.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
