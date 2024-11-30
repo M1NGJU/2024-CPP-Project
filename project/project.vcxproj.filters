@@ -15,16 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stage1-3.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Heart.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="stage1-3-1.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="stage1-3-2.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="stage1-4-1.h">
@@ -34,6 +25,15 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="stage1-5-1.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stage1-5-2.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stage1.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stage1-5-3.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>

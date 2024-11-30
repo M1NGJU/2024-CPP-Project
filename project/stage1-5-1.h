@@ -4,18 +4,19 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
+#include "stage1-5-2.h"
 
 class stage1_5_1 {
 public:
-	static int run(sf::RenderWindow& parentWindow) {
-		sf::RenderWindow& window = parentWindow;
-		window.setTitle(L"stage1-5-1(강민)");
+    static int run(sf::RenderWindow& parentWindow) {
+        sf::RenderWindow& window = parentWindow;
+        window.setTitle(L"stage1-5-1(강민)");
 
-		// 배경 텍스처 로드
-		sf::Texture backgroundTexture;
-		if (!backgroundTexture.loadFromFile("imgs/stage1/space.png")) {
-			return -1;
-		}
+        // 배경 텍스처 로드
+        sf::Texture backgroundTexture;
+        if (!backgroundTexture.loadFromFile("imgs/stage1/space.png")) {
+            return -1;
+        }
 
         // 글꼴 로드
         sf::Font font;
@@ -39,7 +40,13 @@ public:
             while (window.pollEvent(event)) {
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
-                    window.close();
+                    return 21;  // 클릭 시 stage1-5-2로 넘어감
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        std::cout << "마우스 클릭, stage1-5-2로 이동" << std::endl;
+                        return 21; // stage1-5-2로 넘어감
+                    }
+                }
             }
 
             // 화면 초기화
@@ -54,7 +61,7 @@ public:
         }
 
         return 0;
-	}
+    }
 };
 
 #endif
