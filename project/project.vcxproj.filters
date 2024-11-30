@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="home6.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="stage1-3.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
@@ -25,6 +22,9 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="stage1-3-1.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stage1-3-2.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>

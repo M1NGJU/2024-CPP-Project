@@ -5,6 +5,7 @@
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"  // Heart 클래스 포함
+#include "stage1-3-2.h"  // stage1-3-2.h 포함
 
 class stage1_3_1 {
 public:
@@ -91,7 +92,8 @@ public:
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
                         sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-                        return 16; // stage1-3-1 화면으로 전환
+                        stage1_3_2::heart = heart;  // 호감도를 stage1-3-2로 전달
+                        return 17; // stage1-3-2 화면으로 전환
                     }
                 }
             }
