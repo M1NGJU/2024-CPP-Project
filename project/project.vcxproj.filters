@@ -27,10 +27,10 @@
     <ClInclude Include="stage1-3.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="stage1-3-1.h">
+    <ClInclude Include="Heart.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Heart.h">
+    <ClInclude Include="stage1-3-1.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
