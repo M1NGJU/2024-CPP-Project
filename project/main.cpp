@@ -13,6 +13,7 @@
 #include "home6.h"
 #include "home7.h" // Ãß°¡
 #include "stage1.h"
+#include "stage1-1.h"
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Start");
@@ -61,6 +62,9 @@ int main() {
             break;
         case 12:    // stage1
             pageState = stage1::run(window);
+            break;
+        case 13:
+            pageState = stage1_1::run(window);
             break;
         default:
             window.close();

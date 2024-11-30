@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="home6.h" />
     <ClInclude Include="home7.h" />
+    <ClInclude Include="stage1-1.h" />
     <ClInclude Include="stage1.h" />
   </ItemGroup>
   <ItemGroup>
