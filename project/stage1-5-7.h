@@ -91,6 +91,14 @@ public:
             while (window.pollEvent(event)) {
                 if (event.type == sf::Event::Closed)
                     window.close();
+
+                // 마우스 클릭 처리
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        // 클릭 시 stage1-5-8로 이동
+                        return 27;  // stage1-5-8 페이지 번호
+                    }
+                }
             }
 
             window.clear(sf::Color::White);

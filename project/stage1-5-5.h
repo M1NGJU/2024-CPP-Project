@@ -1,3 +1,4 @@
+
 #ifndef STAGE1_5_5_H
 #define STAGE1_5_5_H
 
@@ -7,6 +8,7 @@
 #include "Heart.h"
 #include "stage1-5-6.h"
 #include "stage1-5-7.h"
+// º±≈√
 
 class stage1_5_5 {
 private:

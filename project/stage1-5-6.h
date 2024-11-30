@@ -91,8 +91,8 @@ public:
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
                         sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-                        stage1_5_6::heart = heart;  
-                        return 25; 
+                        stage1_5_6::heart = heart;
+                        return 25;
                     }
                 }
             }

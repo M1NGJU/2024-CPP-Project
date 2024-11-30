@@ -26,11 +26,13 @@
 #include "stage1-5-4.h"
 #include "stage1-5-5.h"
 #include "stage1-5-6.h"
+#include "stage1-5-7.h"
+#include "stage1-5-8.h"
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Start");
 
-    int pageState = 0;
+    int pageState = 0;  // 처음 페이지 상태
 
     while (window.isOpen()) {
         std::cout << "Current pageState: " << pageState << std::endl;
@@ -116,6 +118,9 @@ int main() {
             break;
         case 26:
             pageState = stage1_5_7::run(window);
+            break;
+        case 27:
+            pageState = stage1_5_8::run(window);
             break;
         default:
             window.close();

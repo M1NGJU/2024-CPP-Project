@@ -1,5 +1,6 @@
 #ifndef STAGE1_3_1_H
 #define STAGE1_3_1_H
+// 호감도 하락
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
