@@ -67,7 +67,7 @@ public:
                 // 마우스 클릭 이벤트 처리
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        return 18; // 필요 시 다른 페이지로 전환하도록 설정
+                        window.close(); // 클릭 시 프로그램 종료
                     }
                 }
             }

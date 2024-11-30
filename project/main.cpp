@@ -1,4 +1,4 @@
-#include <SFML/Graphics.hpp>
+ï»¿#include <SFML/Graphics.hpp>
 #include <iostream>
 #include "start.h"
 #include "startPage1.h"
@@ -19,8 +19,7 @@
 #include "stage1-3-1.h"
 #include "stage1-3-2.h"
 #include "stage1-4-1.h"
-#include "stage1-4-2.h" // Ãß°¡
-
+#include "stage1-4-2.h" 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Start");
 
@@ -85,10 +84,10 @@ int main() {
             pageState = stage1_3_2::run(window);
             break;
         case 18:
-            pageState = stage1_4_1::run(window); // stage1-4-1 Ãß°¡
+            pageState = stage1_4_1::run(window); // stage1-4-1 
             break;
         case 19:
-            pageState = stage1_4_2::run(window); // stage1-4-2 Ãß°¡
+            pageState = stage1_4_2::run(window); // stage1-4-2
             break;
         default:
             window.close();
