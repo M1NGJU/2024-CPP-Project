@@ -5,23 +5,21 @@
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"
+#include "stage1-5-6.h"
 
 class stage1_5_5 {
 private:
     static Heart heart;
 
 public:
-    // 호감도 증가
     static void increaseHeart(int amount) {
         heart.increase(amount);
     }
 
-    // 호감도 감소
     static void decreaseHeart(int amount) {
         heart.decrease(amount);
     }
 
-    // 화면 렌더링
     static int run(sf::RenderWindow& parentWindow) {
         sf::RenderWindow& window = parentWindow;
         window.setTitle(L"stage1_5_5(강민)");
@@ -106,13 +104,13 @@ public:
                         // 첫 번째 버튼 클릭 처리
                         if (RectangleSprite.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                             increaseHeart(10);
-                            return 25; // 상태 전환을 위한 값
+                            return 25;
                         }
 
                         // 두 번째 버튼 클릭 처리
                         if (RectangleSprite2.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                             decreaseHeart(10);
-                            return 26; // 상태 전환을 위한 값
+                            return 26;
                         }
                     }
                 }

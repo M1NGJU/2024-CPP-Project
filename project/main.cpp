@@ -25,6 +25,7 @@
 #include "stage1-5-3.h"
 #include "stage1-5-4.h"
 #include "stage1-5-5.h"
+#include "stage1-5-6.h"
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Start");
@@ -105,13 +106,17 @@ int main() {
             pageState = stage1_5_3::run(window);
             break;
         case 23:
-            pageState = stage1_5_4::run(window); // stage1_5_4로 이동
-            std::cout << "Returned pageState: " << pageState << std::endl;
+            pageState = stage1_5_4::run(window);
             break;
         case 24:
-            pageState = stage1_5_5::run(window); // stage1_5_5로 이동
+            pageState = stage1_5_5::run(window);
             break;
-
+        case 25:
+            pageState = stage1_5_6::run(window);
+            break;
+        case 26:
+            pageState = stage1_5_6::run(window);
+            break;
         default:
             window.close();
             break;
