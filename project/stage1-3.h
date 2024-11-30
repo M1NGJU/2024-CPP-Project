@@ -4,12 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
-#include "Heart.h"  // Heart 클래스 포함
-#include "stage1-3-1.h"  // stage1-3-1.h 포함
+#include "Heart.h"
+#include "stage1-3-1.h"
+#include "stage1-4-1.h"
 
 class stage1_3 {
 private:
-    static Heart heart;  // Heart 클래스의 인스턴스
+    static Heart heart;
 
 public:
     // 호감도 증가
@@ -105,14 +106,15 @@ public:
                         // 첫 번째 버튼 클릭 처리
                         if (RectangleSprite.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                             decreaseHeart(10);
-                            stage1_3_1::heart = heart; // 호감도 값을 stage1_3_1으로 전달
-                            return 16; // stage1-3-1 화면으로 전환
+                            stage1_3_1::heart = heart;
+                            return 16;
                         }
 
                         // 두 번째 버튼 클릭 처리
                         if (RectangleSprite2.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                             increaseHeart(10);
-                            text3.setString(L"환웅 호감도 : " + std::to_wstring(heart.getValue()));
+                            stage1_4_1::heart = heart;
+                            return 18;
                         }
                     }
                 }

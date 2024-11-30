@@ -6,7 +6,7 @@ private:
     int value;
 
 public:
-    Heart(int initial_value = 50) : value(initial_value) {}
+    Heart(int initialValue = 50) : value(initialValue) {}
 
     void increase(int amount) {
         value += amount;
@@ -18,10 +18,6 @@ public:
 
     int getValue() const {
         return value;
-    }
-
-    void setValue(int new_value) {
-        value = new_value;
     }
 };
 
