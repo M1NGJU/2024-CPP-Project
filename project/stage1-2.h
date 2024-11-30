@@ -1,13 +1,13 @@
-﻿#ifndef stage1_1_H
-#define stage1_1_H
+﻿#ifndef stage1_2_H
+#define stage1_2_H
 
 #include <SFML/Graphics.hpp>
 
-class stage1_1 {
+class stage1_2 {
 public:
-    static int run(sf::RenderWindow& parentWindow) {
-        sf::RenderWindow& window = parentWindow;
-        window.setTitle(L"stage1(환웅)");
+	static int run(sf::RenderWindow& parentWindow) {
+		sf::RenderWindow& window = parentWindow;
+		window.setTitle(L"stage1(환웅)");
 
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/stage1/background.png")) {
@@ -32,21 +32,20 @@ public:
         // 글꼴 로드
         sf::Font font;
         if (!font.loadFromFile("font/Jua-Regular.ttf")) { // 사용할 글꼴 경로
-            std::cout << "Failed to load font" << std::endl; // 디버그 메시지
             return -1; // 글꼴 로드 실패 시 종료
         }
 
         // 텍스트 생성
         sf::Text text1;
         text1.setFont(font);
-        text1.setString(L"환웅");
+        text1.setString(L"정민 레이디");
         text1.setCharacterSize(33); // 글자 크기
         text1.setFillColor(sf::Color::Black); // 글자 색상
         text1.setPosition(330.f, 860.f); // 텍스트 위치
 
         sf::Text text2;
         text2.setFont(font);
-        text2.setString(L"빨리빨리 안 다니냐? 너 때문에 늦게 생겼잖아");
+        text2.setString(L"(뭐지 이 잘생긴 청년은............???)");
         text2.setCharacterSize(40);
         text2.setFillColor(sf::Color::Black);
         text2.setPosition(390.f, 900.f);
@@ -85,15 +84,6 @@ public:
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
                     window.close();
-
-                // 마우스 클릭 이벤트 처리
-                if (event.type == sf::Event::MouseButtonPressed) {
-                    if (event.mouseButton.button == sf::Mouse::Left) {
-                        sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-                        std::cout << "Mouse clicked on PolygonSprite, transitioning to Home7" << std::endl; // 디버그 메시지
-                        return 14;
-                    }
-                }
             }
 
             // 화면 초기화
@@ -114,7 +104,7 @@ public:
         }
 
         return 0;
-    }
+	}
 };
 
 #endif
