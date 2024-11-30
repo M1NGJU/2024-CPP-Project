@@ -104,6 +104,7 @@ public:
                         // 첫 번째 버튼 클릭 처리
                         if (RectangleSprite.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                             increaseHeart(10);
+                            stage1_5_6::heart = heart;
                             return 25;
                         }
 
