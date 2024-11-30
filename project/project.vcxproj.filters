@@ -36,6 +36,18 @@
     <ClInclude Include="stage1-5-3.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="stage1-3-1.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stage1-3-2.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stage1-3.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stage1-5-4.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

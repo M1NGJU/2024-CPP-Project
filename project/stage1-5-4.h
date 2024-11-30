@@ -1,11 +1,11 @@
-#ifndef STAGE1_5_3_H
-#define STAGE1_5_3_H
+#ifndef STAGE1_5_4_H
+#define STAGE1_5_4_H
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 
-class stage1_5_3 {
+class stage1_5_4 {
 public:
     static int run(sf::RenderWindow& parentWindow) {
         sf::RenderWindow& window = parentWindow;
@@ -46,14 +46,14 @@ public:
         // 텍스트 생성
         sf::Text text1;
         text1.setFont(font);
-        text1.setString(L"정민 레이디");
+        text1.setString(L"강민");
         text1.setCharacterSize(33);
         text1.setFillColor(sf::Color::Black);
         text1.setPosition(330.f, 860.f);
 
         sf::Text text2;
         text2.setFont(font);
-        text2.setString(L"어엉..");
+        text2.setString(L"내 옆에 앉아!!! 우리 같이 앉자");
         text2.setCharacterSize(40);
         text2.setFillColor(sf::Color::Black);
         text2.setPosition(390.f, 900.f);
@@ -88,12 +88,6 @@ public:
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
                     window.close();
-                if (event.type == sf::Event::MouseButtonPressed) {
-                    if (event.mouseButton.button == sf::Mouse::Left) {
-                        std::cout << "마우스 클릭, 다음 stage로 이동" << std::endl;
-                        return 23; // 다음 stage로 넘어감
-                    }
-                }
             }
 
             // 화면 초기화
