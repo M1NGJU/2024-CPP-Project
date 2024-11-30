@@ -4,12 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
+#include "stage1-5-5.h"
 
 class stage1_5_4 {
 public:
     static int run(sf::RenderWindow& parentWindow) {
         sf::RenderWindow& window = parentWindow;
-        window.setTitle(L"stage1-5-2(강민)");
+        window.setTitle(L"stage1-5-4(강민)");
 
         // 배경 텍스처 로드
         sf::Texture backgroundTexture;
@@ -88,6 +89,13 @@ public:
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
                     window.close();
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        std::cout << "마우스 클릭, stage1-5-5로 이동" << std::endl;
+                        return 24; // pageState 24로 설정하여 stage1_5_5로 이동
+                    }
+                }
+
             }
 
             // 화면 초기화
