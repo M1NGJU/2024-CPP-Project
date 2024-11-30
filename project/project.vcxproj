@@ -29,6 +29,7 @@
     <ClInclude Include="stage1-5-4.h" />
     <ClInclude Include="stage1-5-5.h" />
     <ClInclude Include="stage1-5-6.h" />
+    <ClInclude Include="stage1-5-7.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

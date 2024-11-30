@@ -6,6 +6,7 @@
 #include <string>
 #include "Heart.h"
 #include "stage1-5-6.h"
+#include "stage1-5-7.h"
 
 class stage1_5_5 {
 private:
@@ -27,29 +28,34 @@ public:
         // 배경 이미지 로드
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/stage1/background.png")) {
+            std::cerr << "Failed to load background image!" << std::endl;
             return -1;
         }
 
         // 캐릭터 이미지 로드
         sf::Texture kangminTexture;
         if (!kangminTexture.loadFromFile("imgs/stage1/kangmin1.png")) {
+            std::cerr << "Failed to load kangmin image!" << std::endl;
             return -1;
         }
 
         // 버튼 이미지 로드
         sf::Texture RectangleTexture;
         if (!RectangleTexture.loadFromFile("imgs/stage1/RectanglePink.png")) {
+            std::cerr << "Failed to load RectanglePink image!" << std::endl;
             return -1;
         }
 
         sf::Texture RectangleTexture2;
         if (!RectangleTexture2.loadFromFile("imgs/stage1/RectanglePink.png")) {
+            std::cerr << "Failed to load RectanglePink2 image!" << std::endl;
             return -1;
         }
 
         // 글꼴 로드
         sf::Font font;
         if (!font.loadFromFile("font/Jua-Regular.ttf")) {
+            std::cerr << "Failed to load font!" << std::endl;
             return -1;
         }
 
@@ -111,6 +117,7 @@ public:
                         // 두 번째 버튼 클릭 처리
                         if (RectangleSprite2.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                             decreaseHeart(10);
+                            stage1_5_7::heart = heart;
                             return 26;
                         }
                     }

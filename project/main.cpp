@@ -115,7 +115,7 @@ int main() {
             pageState = stage1_5_6::run(window);
             break;
         case 26:
-            pageState = stage1_5_6::run(window);
+            pageState = stage1_5_7::run(window);
             break;
         default:
             window.close();
