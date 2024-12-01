@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "Heart.h"
+#include "stage1-6.h"
 
 class stage1_5_9 {
 public:
@@ -47,14 +48,17 @@ public:
         while (window.isOpen()) {
             sf::Event event;
             while (window.pollEvent(event)) {
-                if (event.type == sf::Event::Closed)
+                if (event.type == sf::Event::Closed) {
                     window.close();
-
+                    return -1;
+                }
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        return 0; // 종료
+                        std::cout << "Mouse clicked, switching to stage1-6..." << std::endl;
+                        return 29; // stage1-6으로 이동
                     }
                 }
+
             }
 
             window.clear(sf::Color::White);

@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Heart.h" />
-    <ClInclude Include="stage1-3-2.h" />
     <ClInclude Include="stage1-5-1.h" />
     <ClInclude Include="stage1-5-8.h" />
     <ClInclude Include="stage1-5-9.h" />
