@@ -20,8 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Heart.h" />
+    <ClInclude Include="stage1-5-6.h" />
     <ClInclude Include="stage1-5-7.h" />
     <ClInclude Include="stage1-5-8.h" />
+    <ClInclude Include="stage1-5-9.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

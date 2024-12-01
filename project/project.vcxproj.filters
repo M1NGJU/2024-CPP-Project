@@ -21,6 +21,12 @@
     <ClInclude Include="stage1-5-7.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="stage1-5-6.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stage1-5-9.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
     <ClInclude Include="stage1-5-8.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
