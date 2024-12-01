@@ -5,6 +5,7 @@
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"
+#include "stage1-7-5.h"
 
 class stage1_7_4 {
 private:
@@ -99,6 +100,7 @@ public:
                         if (RectangleSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
                             std::cout << "Rectangle 1 Å¬¸¯µÊ: È£°¨µµ »ó½Â" << std::endl;
                             increaseHeart(10);
+                            return 43;
                         }
 
                         if (RectangleSprite2.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
