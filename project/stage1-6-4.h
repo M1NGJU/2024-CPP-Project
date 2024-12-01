@@ -6,6 +6,7 @@
 #include <string>
 #include "Heart.h"
 #include "stage1-6-5.h"
+#include "stage1-6-7.h"
 
 class stage1_6_4 {
 private:
@@ -112,6 +113,12 @@ public:
                             // 호감도 감소
                             decreaseHeart(10); // 5에서 10으로 변경
                             return 34; // 페이지 상태 변경
+                        }
+
+                        if(RectangleSprite2.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+                            std::cout << "두번째 버튼 클릭, 페이지 상태 변경!" << std::endl;
+                            increaseHeart(10);
+                            return 36;
                         }
                     }
                 }
