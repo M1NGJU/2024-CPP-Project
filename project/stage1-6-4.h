@@ -8,29 +8,31 @@
 
 class stage1_6_4 {
 private:
-    static Heart heart;
+	static Heart heart;
+
 public:
+    static void increaseHeart(int amount) {
+        heart.increase(amount);
+    }
+
+    static void decreaseHeart(int amount) {
+        heart.decrease(amount);
+    }
+
     static int run(sf::RenderWindow& parentWindow) {
         sf::RenderWindow& window = parentWindow;
-        window.setTitle(L"stage1-6-4");
+        window.setTitle(L"stage1_6_4(용준)");
 
-        // 배경 텍스처 로드
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/stage1/ground1.png")) {
-            std::cout << "배경 텍스처 로드 실패!" << std::endl;
+            std::cerr << "Failed to load background image!" << std::endl;
             return -1;
         }
 
-        sf::Sprite backgroundSprite1(backgroundTexture);
-        backgroundSprite1.setScale(
-            window.getSize().x / backgroundTexture.getSize().x,
-            window.getSize().y / backgroundTexture.getSize().y
-        );
-
         // 캐릭터 이미지 로드
         sf::Texture yangjunTexture;
-        if (!yangjunTexture.loadFromFile("imgs/stage1/jangjun1.png")) {
-            std::cerr << "Failed to load yangjun image!" << std::endl;
+        if (!yangjunTexture.loadFromFile("imgs/stage1/yangjun1.png")) {
+            std::cerr << "Failed to load kangmin image!" << std::endl;
             return -1;
         }
 
@@ -60,14 +62,14 @@ public:
         text1.setString(L"응 좋아! 산책하자");
         text1.setCharacterSize(40);
         text1.setFillColor(sf::Color::Black);
-        text1.setPosition(1200.f, 400.f);
+        text1.setPosition(1100.f, 400.f);
 
         sf::Text text2;
         text2.setFont(font);
         text2.setString(L"미안,,, 나 다음 수행평가,, 나중에 같이 산책하자!");
         text2.setCharacterSize(40);
         text2.setFillColor(sf::Color::Black);
-        text2.setPosition(1020.f, 600.f);
+        text2.setPosition(900.f, 600.f);
 
         sf::Text text3;
         text3.setFont(font);
@@ -91,15 +93,23 @@ public:
 
         yangjunSprite.setPosition(3.f, 130.f);
 
-
+        // while
         while (window.isOpen()) {
             sf::Event event;
             while (window.pollEvent(event)) {
                 if (event.type == sf::Event::Closed)
-                    return 0;
+                    window.close();
+
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+                    }
+                }
             }
 
+            // 화면 초기화
             window.clear(sf::Color::White);
+
             // 배경 그리기
             window.draw(backgroundSprite);
             window.draw(yangjunSprite);
@@ -113,8 +123,13 @@ public:
 
             window.display();
         }
-        return 0;
-    }
-};
 
+        return 0;
+
+
+    }
+
+
+};
+Heart stage1_6_4::heart(50);
 #endif

@@ -33,6 +33,8 @@
 #include "stage1-6-1.h"
 #include "stage1-6-2.h"
 #include "stage1-6-3.h"
+#include "stage1-6-4.h"
+
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Start");
@@ -40,7 +42,7 @@ int main() {
     int pageState = 0;  // 처음 페이지 상태
 
     while (window.isOpen()) {
-        std::cout << "Current pageState: " << pageState << std::endl;  // 디버깅 메시지
+        std::cout << "Current pageState: " << pageState << std::endl;
 
         switch (pageState) {
         case 0:
@@ -142,7 +144,9 @@ int main() {
         case 32:
             pageState = stage1_6_3::run(window);
             break;
-
+        case 33:
+            pageState = stage1_6_4::run(window);
+            break;
         default:
             window.close();
             break;

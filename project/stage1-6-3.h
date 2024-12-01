@@ -89,16 +89,17 @@ public:
             while (window.pollEvent(event)) {
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
-                    return 0;
+                    return 0; 
 
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
                         // 마우스 클릭 위치
                         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-                        // 사각형 클릭 시
-                        
+                        return 33;
                     }
                 }
+
+
             }
 
             // 윈도우 렌더링
