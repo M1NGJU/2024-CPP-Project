@@ -6,6 +6,7 @@
 #include <string>
 #include "Heart.h"
 #include "stage1-7-5.h"
+#include "stage1-7-7.h"
 
 class stage1_7_4 {
 private:
