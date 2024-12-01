@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
+#include "stage1-6-1.h"
 
 class stage1_6 {
 public:
@@ -43,7 +44,8 @@ public:
 
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        return 0;  // 초기 화면으로 돌아감
+                        std::cout << "마우스 클릭, 다음 stage로 이동" << std::endl;
+                        return 30;  // stage1-6-1로 전환
                     }
                 }
             }
