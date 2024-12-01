@@ -5,12 +5,13 @@
 #include <string>
 #include <iostream>
 #include "Heart.h"  // Heart 클래스 포함
+#include "stage1-6.h"
 
 class stage1_5_8 {
 public:
     static Heart heart;  // Heart 클래스의 인스턴스 (외부에서 초기화)
 
-    static int run(sf::RenderWindow& window) { // parentWindow 제거
+    static int run(sf::RenderWindow& window) {
         window.setTitle(L"stage1-5-8(강민)");  // 창 제목 설정
 
         // 배경 이미지 로드
@@ -64,11 +65,11 @@ public:
                 }
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        std::cout << "Mouse clicked, closing window..." << std::endl;
-                        window.close();
-                        return 0;
+                        std::cout << "Mouse clicked, switching to stage1-6..." << std::endl;
+                        return 29; // stage1-6으로 이동
                     }
                 }
+
             }
 
             // 화면 초기화
