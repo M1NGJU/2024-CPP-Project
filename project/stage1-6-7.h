@@ -5,6 +5,7 @@
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"
+#include "stage1-6-8.h"
 
 class stage1_6_7 {
 private:
@@ -77,6 +78,12 @@ public:
                     if (event.mouseButton.button == sf::Mouse::Left) {
                         // 마우스 위치 얻기
                         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+
+                        // 첫 번째 버튼 클릭 시, stage1_6_6로 넘어감
+                        if (RectangleSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+                            std::cout << "첫 번째 버튼 클릭, stage1_6_8으로 이동!" << std::endl;
+                            return 37; // stage1_6_6로 넘어가기
+                        }
                     }
                 }
             }
