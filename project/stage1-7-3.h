@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
+#include "stage1-7-4.h"
 
 class stage1_7_3 {
 public:
@@ -89,6 +90,12 @@ public:
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
                     return 0;
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        std::cout << "마우스 클릭, 프로그램 종료" << std::endl;
+                        return 42;
+                    }
+                }
             }
 
             // 화면 초기화
