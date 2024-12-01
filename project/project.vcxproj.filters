@@ -18,13 +18,10 @@
     <ClInclude Include="Heart.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="stage1-6-6.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="stage1-6-8.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="stage1-7.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stage1-7-1.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>

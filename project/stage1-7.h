@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
+#include "stage1-7-1.h"
 
 class stage1_7 {
 public:
@@ -40,6 +41,12 @@ public:
             while (window.pollEvent(event)) {
                 if (event.type == sf::Event::Closed)
                     return 0;  // 창 닫기
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        std::cout << "마우스 클릭, 프로그램 종료" << std::endl;
+                        return 39;
+                    }
+                }
             }
 
             // 화면 초기화
