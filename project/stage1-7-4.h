@@ -106,6 +106,7 @@ public:
                         if (RectangleSprite2.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
                             std::cout << "Rectangle 2 클릭됨: 호감도 감소" << std::endl;
                             decreaseHeart(10);
+                            return 45;
                         }
                     }
                 }

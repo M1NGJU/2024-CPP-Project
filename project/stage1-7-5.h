@@ -56,7 +56,7 @@ public:
 
         sf::Text text2;
         text2.setFont(font);
-        text2.setString(L"용준 호감도 : " + std::to_wstring(heart.getValue()));
+        text2.setString(L"유키 호감도 : " + std::to_wstring(heart.getValue()));
         text2.setCharacterSize(30);
         text2.setFillColor(sf::Color::Black);
         text2.setPosition(40.f, 30.f);
