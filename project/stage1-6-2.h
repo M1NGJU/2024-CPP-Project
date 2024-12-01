@@ -14,7 +14,7 @@ public:
 
         // 배경 텍스처 로드
         sf::Texture backgroundTexture;
-        if (!backgroundTexture.loadFromFile("imgs/stage1/school1.png")) {
+        if (!backgroundTexture.loadFromFile("imgs/stage1/ground1.png")) {
             std::cout << "배경 텍스처 로드 실패!" << std::endl;
             return -1;
         }

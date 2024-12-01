@@ -14,7 +14,7 @@ public:
         window.setTitle(L"stage1-5-9 (°­¹Î)");
 
         sf::Texture backgroundTexture;
-        if (!backgroundTexture.loadFromFile("imgs/stage1/background.png")) {
+        if (!backgroundTexture.loadFromFile("imgs/stage1/school1.png")) {
             return -1;
         }
 

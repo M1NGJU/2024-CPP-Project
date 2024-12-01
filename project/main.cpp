@@ -1,5 +1,4 @@
-﻿
-#include <SFML/Graphics.hpp>
+﻿#include <SFML/Graphics.hpp>
 #include <iostream>
 #include "start.h"
 #include "startPage1.h"
@@ -35,14 +34,13 @@
 #include "stage1-6-2.h"
 #include "stage1-6-3.h"
 
-
 int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Start");
 
     int pageState = 0;  // 처음 페이지 상태
 
     while (window.isOpen()) {
-        std::cout << "Current pageState: " << pageState << std::endl;
+        std::cout << "Current pageState: " << pageState << std::endl;  // 디버깅 메시지
 
         switch (pageState) {
         case 0:
@@ -144,6 +142,7 @@ int main() {
         case 32:
             pageState = stage1_6_3::run(window);
             break;
+
         default:
             window.close();
             break;

@@ -4,16 +4,17 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
+#include "stage1-6-4.h"
 
 class stage1_6_3 {
 public:
-	static int run(sf::RenderWindow& parentWindow) {
-		sf::RenderWindow& window = parentWindow;
-		window.setTitle(L"stage1-6-3(용준)");
+    static int run(sf::RenderWindow& parentWindow) {
+        sf::RenderWindow& window = parentWindow;
+        window.setTitle(L"stage1-6-3(용준)");
 
         // 배경 텍스처 로드
         sf::Texture backgroundTexture;
-        if (!backgroundTexture.loadFromFile("imgs/stage1/school1.png")) {
+        if (!backgroundTexture.loadFromFile("imgs/stage1/ground1.png")) {
             std::cout << "배경 텍스처 로드 실패!" << std::endl;
             return -1;
         }
@@ -83,7 +84,6 @@ public:
         yangjunnSprite.setPosition(3.f, 130.f);
 
         // while문
-
         while (window.isOpen()) {
             sf::Event event;
             while (window.pollEvent(event)) {
@@ -93,17 +93,16 @@ public:
 
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
-                        std::cout << "마우스 클릭, 프로그램 종료" << std::endl;
-                        window.close(); // 창 닫기
-                        return 0; // 프로그램 종료
+                        // 마우스 클릭 위치
+                        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+                        // 사각형 클릭 시
+                        
                     }
                 }
             }
 
-            // 화면 초기화
+            // 윈도우 렌더링
             window.clear(sf::Color::White);
-
-            // 배경 그리기
             window.draw(backgroundSprite);
             window.draw(yangjunnSprite);
             window.draw(RectangleSprite);
@@ -111,17 +110,10 @@ public:
             window.draw(text1);
             window.draw(text2);
             window.draw(text3);
-
-            // 화면 출력
             window.display();
         }
-
-        return 0;
-
-
-
-
-	}
+        return 0;  // 페이지 종료
+    }
 };
 
 #endif
