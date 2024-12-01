@@ -34,6 +34,7 @@
 #include "stage1-6-2.h"
 #include "stage1-6-3.h"
 #include "stage1-6-4.h"
+#include "stage1-6-5.h"
 
 
 int main() {
@@ -146,6 +147,9 @@ int main() {
             break;
         case 33:
             pageState = stage1_6_4::run(window);
+            break;
+        case 34:
+            pageState = stage1_6_5::run(window);
             break;
         default:
             window.close();

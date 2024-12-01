@@ -5,10 +5,11 @@
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"
+#include "stage1-6-5.h"
 
 class stage1_6_4 {
 private:
-	static Heart heart;
+    static Heart heart;
 
 public:
     static void increaseHeart(int amount) {
@@ -102,9 +103,19 @@ public:
 
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
+                        // 마우스 위치 얻기
                         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+
+                        // 버튼 클릭 확인
+                        if (RectangleSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+                            std::cout << "첫 번째 버튼 클릭, 페이지 상태 변경!" << std::endl;
+                            // 호감도 감소
+                            decreaseHeart(10); // 5에서 10으로 변경
+                            return 34; // 페이지 상태 변경
+                        }
                     }
                 }
+
             }
 
             // 화면 초기화
@@ -125,11 +136,7 @@ public:
         }
 
         return 0;
-
-
     }
-
-
 };
 Heart stage1_6_4::heart(50);
 #endif
