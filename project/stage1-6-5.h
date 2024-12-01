@@ -5,6 +5,7 @@
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"
+#include "stage1-6-6.h" // stage1_6_6.h를 추가하여 호출할 수 있도록 함
 
 class stage1_6_5 {
 private:
@@ -69,13 +70,23 @@ public:
         );
         yangjunSprite.setPosition(3.f, 130.f);
 
-        //while
-
+        // while loop
         while (window.isOpen()) {
             sf::Event event;
             while (window.pollEvent(event)) {
-                if (event.type == sf::Event::Closed)
-                    window.close();
+                // 마우스 클릭 이벤트 처리
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        // 마우스 위치 얻기
+                        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+
+                        // 첫 번째 버튼 클릭 시, stage1_6_6로 넘어감
+                        if (RectangleSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+                            std::cout << "첫 번째 버튼 클릭, stage1_6_6으로 이동!" << std::endl;
+                            return 35; // stage1_6_6로 넘어가기
+                        }
+                    }
+                }
             }
 
             window.clear(sf::Color::White);
@@ -91,5 +102,7 @@ public:
         return 0;
     }
 };
+
 Heart stage1_6_5::heart(40);
+
 #endif
