@@ -5,14 +5,15 @@
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"
+#include "stage1-7.h"
 
 class stage1_6_8 {
 private:
-	static Heart heart;
+    static Heart heart;
 
 public:
-	static int run(sf::RenderWindow& parentWindow) {
-		sf::RenderWindow& window = parentWindow;  // 부모 윈도우를 window로 설정
+    static int run(sf::RenderWindow& parentWindow) {
+        sf::RenderWindow& window = parentWindow;  // 부모 윈도우를 window로 설정
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/stage1/ground1.png")) {
             return -1;
@@ -54,6 +55,12 @@ public:
                     window.close();
                     return -1;
                 }
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        std::cout << "Mouse clicked, switching to stage1-6..." << std::endl;
+                        return 38;
+                    }
+                }
             }
 
             // 화면 초기화
@@ -72,7 +79,7 @@ public:
         return 0;
 
 
-	}
+    }
 };
 Heart stage1_6_8::heart(60);
 #endif

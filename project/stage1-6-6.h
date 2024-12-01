@@ -5,7 +5,7 @@
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"
-
+#include "stage1-7.h"
 class stage1_6_6 {
 private:
     static Heart heart;
@@ -54,6 +54,12 @@ public:
                 if (event.type == sf::Event::Closed) {
                     window.close();
                     return -1;
+                }
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        std::cout << "Mouse clicked, switching to stage1-6..." << std::endl;
+                        return 38;
+                    }
                 }
             }
 
