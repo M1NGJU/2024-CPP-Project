@@ -21,10 +21,10 @@
     <ClInclude Include="stage1-7-6.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="stage1-7-7.h">
+    <ClInclude Include="stage1-7-8.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="stage1-7-8.h">
+    <ClInclude Include="LastPage.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>

@@ -59,6 +59,11 @@ public:
                     window.close();
                     return -1;
                 }
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        return 47;
+                    }
+                }
             }
 
             // 화면 초기화

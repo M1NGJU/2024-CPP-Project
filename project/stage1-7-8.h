@@ -5,10 +5,11 @@
 #include <SFML/Window/Mouse.hpp>
 #include <string>
 #include "Heart.h"
+#include "LastPage.h"
 
 class stage1_7_8 {
 private:
-	static Heart heart;
+    static Heart heart;
 
 public:
     static int run(sf::RenderWindow& parentWindow) {
@@ -58,6 +59,11 @@ public:
                 if (event.type == sf::Event::Closed) {
                     window.close();
                     return -1;
+                }
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
+                        return 47;
+                    }
                 }
             }
 
