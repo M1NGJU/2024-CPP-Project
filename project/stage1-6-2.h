@@ -1,16 +1,15 @@
-#ifndef STAGE1_6_1_H
-#define STAGE1_6_1_H
+#ifndef STAGE1_6_2_H
+#define STAGE1_6_2_H
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
-#include "stage1-6-2.h"
 
-class stage1_6_1 {
+class stage1_6_2 {
 public:
-    static int run(sf::RenderWindow& parentWindow) {
-        sf::RenderWindow& window = parentWindow;
-        window.setTitle(L"stage1-6-1(용준)");
+	static int run(sf::RenderWindow& parentWindow) {
+		sf::RenderWindow& window = parentWindow;
+		window.setTitle(L"stage1-6-2(용준)");
 
         // 배경 텍스처 로드
         sf::Texture backgroundTexture;
@@ -47,14 +46,14 @@ public:
         // 텍스트 생성
         sf::Text text1;
         text1.setFont(font);
-        text1.setString(L"용준");
+        text1.setString(L"정민 레이디");
         text1.setCharacterSize(33);
         text1.setFillColor(sf::Color::Black);
         text1.setPosition(330.f, 860.f);
 
         sf::Text text2;
         text2.setFont(font);
-        text2.setString(L"누나!! 밥 맛있게 먹었어요??");
+        text2.setString(L"어엉 맛있게 먹었어");
         text2.setCharacterSize(40);
         text2.setFillColor(sf::Color::Black);
         text2.setPosition(390.f, 900.f);
@@ -95,7 +94,8 @@ public:
                 if (event.type == sf::Event::MouseButtonPressed) {
                     if (event.mouseButton.button == sf::Mouse::Left) {
                         std::cout << "마우스 클릭, 프로그램 종료" << std::endl;
-                        return 31;
+                        window.close(); // 창 닫기
+                        return 0; // 프로그램 종료
                     }
                 }
             }
@@ -117,7 +117,8 @@ public:
         }
 
         return 0;
-    }
+
+	}
 };
 
 #endif
