@@ -1,16 +1,15 @@
-#ifndef STAGE1_7_1_H
-#define STAGE1_7_1_H
+#ifndef STAGE1_7_2_H
+#define STAGE1_7_2_H
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <string>
-#include "stage1-7-2.h"
 
-class stage1_7_1 {
+class stage1_7_2 {
 public:
-	static int run(sf::RenderWindow& parentWindow) {
-		sf::RenderWindow& window = parentWindow;
-		window.setTitle(L"stage1-7-1(유키)");
+    static int run(sf::RenderWindow& parentWindow) {
+        sf::RenderWindow& window = parentWindow;
+        window.setTitle(L"stage1-7-1(유키)");
         // 배경 텍스처 로드
         sf::Texture backgroundTexture;
         if (!backgroundTexture.loadFromFile("imgs/stage1/hackwon1.png")) {
@@ -46,14 +45,14 @@ public:
         // 텍스트 생성
         sf::Text text1;
         text1.setFont(font);
-        text1.setString(L"유키");
+        text1.setString(L"정민 레이디");
         text1.setCharacterSize(33);
         text1.setFillColor(sf::Color::Black);
         text1.setPosition(330.f, 860.f);
 
         sf::Text text2;
         text2.setFont(font);
-        text2.setString(L"어! 정민아!! 왔어?");
+        text2.setString(L"네.. 빨리 오셨네요");
         text2.setCharacterSize(40);
         text2.setFillColor(sf::Color::Black);
         text2.setPosition(390.f, 900.f);
@@ -90,12 +89,6 @@ public:
                 // 닫기 버튼 처리
                 if (event.type == sf::Event::Closed)
                     return 0;
-                if (event.type == sf::Event::MouseButtonPressed) {
-                    if (event.mouseButton.button == sf::Mouse::Left) {
-                        std::cout << "마우스 클릭, 프로그램 종료" << std::endl;
-                        return 40;
-                    }
-                }
             }
 
             // 화면 초기화
@@ -115,7 +108,7 @@ public:
         }
 
         return 0;
-	}
+    }
 };
 
 #endif
