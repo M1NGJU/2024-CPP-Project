@@ -9,7 +9,7 @@ class stage1_6 {
 public:
     static int run(sf::RenderWindow& parentWindow) {
         sf::RenderWindow& window = parentWindow;
-        window.setTitle(L"stage1-6(유키)");
+        window.setTitle(L"stage1-6(용준)");
 
         // 배경 텍스처 로드
         sf::Texture backgroundTexture;
